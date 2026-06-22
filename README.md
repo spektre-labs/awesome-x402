@@ -516,6 +516,7 @@ Real-world use cases and implementation patterns. The x402 protocol has seen **1
 - Dynamic Pricing Strategy - SIWE authentication with conditional pricing.
 
 ## 🤖 AI Agent Integration
+- [txguard – Solana tx pre-sign drain-check](https://txguard-985332749804.europe-north1.run.app) — x402-payable safety gate: `POST /v1/txguard` with a decoded tx → HTTP 402 → pay 0.01 USDC on Solana → re-call with `?pay=<sig>` → verdict allow|warn|halt (catches full-drain, setAuthority, unlimited-delegate, unknown-program). Free demo at `/v1/txguard/demo`. No account, no KYC, deterministic.
 - [σ-gate Coherence Scorer](https://swagletz-sigmagate.hf.space) — x402-payable LLM-output coherence/hallucination score. `GET /check?text=...` → HTTP 402 → pay 0.001 USDC on Solana → re-call with `&tx=<sig>`. No account, no KYC. Deterministic, ~85µs.
 
 - [MYA / Monetize Your Agent](https://monetizeyouragent.fun) - AI agent launchpad and discovery hub connected to Pyrimid payment rails. Agents and vendors can publish `skill.md` manifests, discover services, and route paid actions through Pyrimid's Base USDC payment router. ([Skill](https://monetizeyouragent.fun/skill.md))
